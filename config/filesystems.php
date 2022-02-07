@@ -46,7 +46,17 @@ return [
             'driver' => 'local',
             'root' => public_path('uploads'),
 
+
         ],
+
+        'maincategories' => [
+            'driver' => 'local',
+            'root' => base_path().'/public/assets/images/maincategories/',
+            'url' => env('APP_URL').'/public',
+            'visibility' => 'public',
+
+        ],
+
 
         's3' => [
             'driver' => 's3',
@@ -71,6 +81,7 @@ return [
     | the locations of the links and the values should be their targets.
     |
     */
+
 
     'links' => [
         public_path('storage') => storage_path('app/public'),

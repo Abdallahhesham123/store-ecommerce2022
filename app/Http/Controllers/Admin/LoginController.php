@@ -18,30 +18,6 @@ class LoginController extends Controller
         return view('admin.auth.login');
     }
 
-
-
-
-    // public function save(){
-
-    //     $admin = new Admin();
-    //     $admin -> name ="Ahmed Emam";
-    //     $admin -> email ="ahmed@gmail.com";
-    //     $admin -> password = bcrypt("Ahmed Emam");
-    //     $admin -> save();
-
-    // }
-
-    /**
-     *
-     *
-     *
-     *
-     *
-     *
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function login(LoginRequest $request)
     {
 
@@ -52,7 +28,7 @@ class LoginController extends Controller
 
         if (auth()->guard('admin')->attempt(['email' => $request->input("email"), 'password' => $request->input("password")], $remember_me)) {
            // notify()->success('تم الدخول بنجاح  ');
-            return redirect() -> route('admin.dashboard')->with(['success' => 'hello you are welcome in your pannel']);
+            return redirect() -> route('admin.dashboard')->with(['success' => 'hello  my admin you are welcome in your pannel']);
         }
        // notify()->error('there is an error data please try again');
         return redirect()->back()->with(['error' => 'there is an error data please try again']);

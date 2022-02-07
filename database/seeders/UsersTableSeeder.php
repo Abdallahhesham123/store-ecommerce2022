@@ -44,15 +44,22 @@ class UsersTableSeeder extends Seeder
        $user= Admin::create([
 
 
-            'name'=>'abdallah',
-
-            'email'=>'abdallah@gmail.com',
+            'name'=>'super admin',
+            'email'=>'super_admin@gmail.com',
             'password'=>bcrypt('secret')
 
         ]);
+        $user1= Admin::create([
 
-        // $user->attachRole('super_admin');
-        // $user1->attachRole('admin');
+
+            'name'=>'abdallah',
+            'email'=>'abdallahhesham2@gmail.com',
+            'password'=>bcrypt('123456789')
+
+        ]);
+
+        $user->attachRole('super_admin');
+        $user1->attachRole('admin');
         // $user2->attachRole('admin');
         // $user3->attachRole('super_admin');
     }

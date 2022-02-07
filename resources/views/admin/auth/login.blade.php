@@ -27,7 +27,7 @@
                                 <input type="text" name="email" class="form-control form-control-lg input-lg"
                                        value="{{old('email')}}" id="email" placeholder=" Please enter your email ">
                                 <div class="form-control-position">
-                                    <i class="ft-user"></i>
+                                    <i class="ft-user "></i>
                                 </div>
                                 @error('email')
                                 <span class="text-danger">{{$message}}</span>
@@ -35,11 +35,11 @@
 
                             </fieldset>
                             <fieldset class="form-group position-relative has-icon-left">
-                                <input type="password" name="password" class="form-control form-control-lg input-lg"
+                                <input type="password" name="password" class="form-control form-control-lg input-lg password"
                                        id="user-password"
                                        placeholder="Please enter your password">
                                 <div class="form-control-position">
-                                    <i class="la la-key"></i>
+                                    <i class="la la-key show-pass"></i>
                                 </div>
                                 @error('password')
                                 <span class="text-danger">{{$message}}</span>

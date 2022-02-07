@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="rtl">
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,10 +66,12 @@
 <!-- fixed-top-->
 @include('admin.includes.header')
 <!-- ////////////////////////////////////////////////////////////////////////////-->
+{{-- @include('partial.flash') --}}
 @include('admin.includes.sidebar')
-
 @yield('content')
 <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+
 @include('admin.includes.footer')
 
 @notify_js
@@ -169,6 +171,68 @@
         meridians: true,setCurrentTime: false
     });
 </script>
+
+<script>
+
+    $(function(){
+
+    'usestrict';
+
+        $(".image").change(function(){
+
+    if(this.files && this.files[0]){
+
+
+        var reader= new FileReader();
+        reader.onload= function(e){
+
+
+            $('.image-preview').attr('src' ,  e.target.result );
+        }
+
+        reader.readAsDataURL(this.files[0]);
+    }
+
+
+        });
+
+        $('[ placeholder]').focus(function(){
+     $(this).attr("data-text",$(this).attr('placeholder'));
+     $(this).attr('placeholder','') ;
+  }).blur(function(){
+
+     $(this).attr('placeholder',$(this).attr('data-text'));
+     $(this).attr('data-text','') ;
+
+  });
+  //add asterisk on required field
+  $("input").each(function(){
+     if ($(this).attr("required")==='required'){
+        $(this).after('<span class="asterisk">*</span>');
+     }
+  })
+
+    });
+
+  //convert password field to text on hover
+        var passfield = $('.password');
+    $('.show-pass').hover(function(){
+
+     passfield.attr('type','text');
+
+
+    },function(){
+
+      passfield.attr('type','password');
+
+
+    });
+
+
+    </script>
 @yield('script')
+
+
+
 </body>
 </html>

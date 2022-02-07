@@ -73,6 +73,19 @@
 <!-- END PAGE LEVEL JS-->
 
 <script>
+    //convert password field to text on hover
+    var passfield = $('.password');
+    $('.show-pass').hover(function(){
+
+     passfield.attr('type','text');
+
+
+    },function(){
+
+      passfield.attr('type','password');
+
+
+    });
 
 </script>
 @notify_js

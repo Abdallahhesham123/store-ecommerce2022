@@ -6,47 +6,60 @@
                         class="menu-title" data-i18n="nav.add_on_drag_drop.main">Main Menu </span></a>
             </li>
 
-            <li class="nav-item  open ">
-                <a href=""><i class="la la-home"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">Languages </span>
-                    <span
-                        class="badge badge badge-info badge-pill float-right mr-2">5</span>
+            {{-- <li class="nav-item  open ">
+
+                <a href=""><i class="la la-tags"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main"><a href=""> admin</a></span>
+
                 </a>
                 <ul class="menu-content">
                     <li class="active"><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce"> Show all</a>
+                                          data-i18n="nav.dash.ecommerce"> admin Pannel</a>
                     </li>
-                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">Add </a>
+                    <li><a class="menu-item" href="{{ route('admin.create') }}" data-i18n="nav.dash.crypto">Add </a>
                     </li>
                 </ul>
-            </li>
+            </li> --}}
+
+            <li class="nav-item"><a href=""><i class="la la-bank"></i>
+                <span class="menu-title" data-i18n="nav.dash.main">admin Pannel</span>
+                <span
+                    class="badge badge badge-danger badge-pill float-right mr-2">{{App\Models\Admin::count()}}</span>
+            </a>
+            <ul class="menu-content">
+                <li class="active"><a class="menu-item" href="{{ route('admin.index') }}"
+                                      data-i18n="nav.dash.ecommerce">Show all </a>
+                </li>
+                <li><a class="menu-item" href="{{route('admin.create')}}" data-i18n="nav.dash.crypto">Add new admin </a>
+                </li>
+            </ul>
+        </li>
 
 
-            <li class="nav-item"><a href=""><i class="la la-group"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">Main Department </span>
+            <li class="nav-item"><a href=""><i class="la la-language"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">languages </span>
                     <span
-                        class="badge badge badge-danger badge-pill float-right mr-2"></span>
+                        class="badge badge badge-danger badge-pill float-right mr-2">{{App\Models\Lang::count()}}</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href=""
+                    <li class="active"><a class="menu-item" href="{{ route ('admin.lang')}}"
                                           data-i18n="nav.dash.ecommerce">Show all </a>
                     </li>
-                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">Add new Part </a>
+                    <li><a class="menu-item" href="{{route('admin.lang.create')}}" data-i18n="nav.dash.crypto">Add new Part </a>
                     </li>
                 </ul>
             </li>
 
-            <li class="nav-item"><a href=""><i class="la la-group"></i>
-                    <span class="menu-title" data-i18n="nav.dash.main">الاقسام الفرعية   </span>
+            <li class="nav-item"><a href=""><i class="la la-building-o"></i>
+                    <span class="menu-title" data-i18n="nav.dash.main">Main_categories</span>
                     <span
-                        class="badge badge badge-danger badge-pill float-right mr-2">400</span>
+                        class="badge badge badge-danger badge-pill float-right mr-2 ">{{App\Models\MainCat::count()}}</span>
                 </a>
                 <ul class="menu-content">
-                    <li class="active"><a class="menu-item" href=""
-                                          data-i18n="nav.dash.ecommerce"> عرض الكل </a>
+                    <li class="active"><a class="menu-item" href="{{route('admin.maincat')}}"
+                                          data-i18n="nav.dash.ecommerce"> Show All </a>
                     </li>
-                    <li><a class="menu-item" href="" data-i18n="nav.dash.crypto">أضافة
-                            قسم فرعي جديد </a>
+                    <li><a class="menu-item" href="{{route('admin.maincat.create')}}" data-i18n="nav.dash.crypto">Add </a>
                     </li>
                 </ul>
             </li>
